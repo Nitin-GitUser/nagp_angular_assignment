@@ -13,7 +13,6 @@ export class ProductsComponent implements OnInit{
   products: Products[];
   cartProducts: Products[] = [];
   cartProductsNo = this.cartProducts.length;
-  cartUrl = `cart/`;
 
   filterInputPlaceholder = 'Search Painting Gallery';
   filterImage: string;
@@ -32,7 +31,9 @@ export class ProductsComponent implements OnInit{
       product.name.toLowerCase().indexOf(filterBy) !== -1);
   }
 
-
+  redirectCart(): void {
+    this.router.navigateByUrl(`/cart`);
+  }
 
   constructor(private productservice: ProductsService, private readonly router: Router ) {
     this.products = this.productservice.getProducts();

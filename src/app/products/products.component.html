@@ -6,7 +6,7 @@
             <input class="form-control" style="width: 850px;" [(ngModel)]="filterimage" type="text" [placeholder]="filterInputPlaceholder" />
         </div>
         <div>
-            <a class="cart" href="{{cartUrl}}"><img src='../../assets/images/cart.jpg' width="40">
+            <a class="cart" style="cursor: pointer;" (click)="redirectCart()" ><img src='../../assets/images/cart.jpg' width="40">
                 <h6 class="text-primary p-0 cartno" *ngIf="cartProductsNo !== 0">{{ cartProductsNo }}</h6>
             </a>
         </div>
