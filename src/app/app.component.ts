@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'nagp-angular-assignment';
+
+  constructor(private router: Router) {
+
+  }
+  get email(): string {
+    return localStorage.getItem('LoggedInUser');
+  }
+
+  logout(): void {
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
+
 }
